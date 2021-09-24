@@ -19,6 +19,8 @@ renamed_modules = {
     "edi_xml": "edi_xml_oca",
     # OCA/server-tools
     "openupgrade_records": "upgrade_analysis",
+    # OCA/manufacture
+    "mrp_production_request": "mrp_request",
     # OCA/...
 }
 
@@ -49,6 +51,7 @@ merged_modules = {
 # only used here for upgrade_analysis
 renamed_models = {
     # odoo
+<<<<<<< HEAD
     "crm.lead.tag": "crm.tag",
     "email_template.preview": "mail.template.preview",
     "event.answer": "event.question.answer",
@@ -68,6 +71,12 @@ renamed_models = {
     "openupgrade.record": "upgrade.record",
     "openupgrade.generate.records.wizard": "upgrade.generate.record.wizard",
     "openupgrade.install.all.wizard": "upgrade.install.wizard",
+=======
+    # OCA/manufacture
+    "mrp.production.request": "mrp.request",
+    "mrp.production.request.create.mo": "mrp.request.create.mo",
+    "mrp.production.request.create.mo.line": "mrp.request.create.mo.line",
+>>>>>>> ceea217ce13a9eb79775cf77bd797e3df422836b
 }
 
 # only used here for upgrade_analysis
