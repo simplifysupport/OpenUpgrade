@@ -9,7 +9,7 @@ def fill_purchase_order_line_qty_to_invoice(env):
             env.cr,
             """
             ALTER TABLE purchase_order_line
-            ADD COLUMN qty_to_invoice integer""",
+            ADD COLUMN qty_to_invoice float""",
         )
     openupgrade.logged_query(
         env.cr,
