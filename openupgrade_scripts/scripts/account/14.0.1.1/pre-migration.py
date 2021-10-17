@@ -194,6 +194,7 @@ def add_move_id_field_account_bank_statement_line(env):
         WHERE aml.move_id = am.id AND aml.statement_line_id IS NOT NULL
         """,
     )
+    '''
     openupgrade.logged_query(
         env.cr,
         """
@@ -205,6 +206,7 @@ def add_move_id_field_account_bank_statement_line(env):
             OR am.statement_line_id = absl.id
         """,
     )
+    '''
     openupgrade.logged_query(
         env.cr,
         """
@@ -264,6 +266,7 @@ def add_move_id_field_account_payment(env):
         WHERE ap.journal_id = aj.id
         """,
     )
+    '''
     openupgrade.logged_query(
         env.cr,
         """
@@ -278,6 +281,7 @@ def add_move_id_field_account_payment(env):
         ADD COLUMN payment_id integer
         """,
     )
+    '''
     openupgrade.logged_query(
         env.cr,
         """
@@ -287,6 +291,7 @@ def add_move_id_field_account_payment(env):
         WHERE aml.move_id = am.id AND aml.payment_id IS NOT NULL
         """,
     )
+    '''
     openupgrade.logged_query(
         env.cr,
         """
@@ -308,6 +313,7 @@ def add_move_id_field_account_payment(env):
             OR am.name = ap.communication)
         """,
     )
+    '''
     # TODO: if still exist some account_payment with null move_id
     # openupgrade.logged_query(
     #     env.cr,
