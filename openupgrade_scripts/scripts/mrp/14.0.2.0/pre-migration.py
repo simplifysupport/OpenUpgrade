@@ -26,7 +26,7 @@ def fill_mrp_routing_workcenter_bom_id(env):
     openupgrade.logged_query(
         env.cr,
         """
-        INSERT INTO mrp_routing_workcenter mrw (name, workcenter_id, sequence,
+        INSERT INTO mrp_routing_workcenter (name, workcenter_id, sequence,
             company_id, worksheet_type, note, worksheet_google_slide, time_mode,
             time_mode_batch, time_cycle_manual, create_uid, write_uid,
             create_date, write_date, bom_id, old_routing_workcenter_id)
@@ -58,6 +58,7 @@ def fill_mrp_routing_workcenter_bom_id(env):
         JOIN mrp_routing_workcenter mrw2 ON mrw.old_routing_workcenter_id = mrw2.id
         WHERE mbp.bom_id = mb.id AND mbp.operation_id = mrw2.id""",
     )
+    '''
     openupgrade.logged_query(
         env.cr,
         """
@@ -69,6 +70,7 @@ def fill_mrp_routing_workcenter_bom_id(env):
         JOIN mrp_routing_workcenter mrw2 ON mrw.old_routing_workcenter_id = mrw2.id
         WHERE mw.production_id = mp.id AND mp.operation_id = mrw2.id""",
     )
+    '''
     openupgrade.logged_query(
         env.cr,
         """
